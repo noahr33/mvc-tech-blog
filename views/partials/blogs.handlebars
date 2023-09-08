@@ -1,0 +1,14 @@
+<div>
+  {{#each blogs}}
+    <div class="card bg-secondary m-3 p-3 border border-light border-end-0 rounded-start">
+      <h2>
+        <a href="#">{{blog_title}}</a>
+      </h2>
+      <div class="text-dark">
+        Posted by {{user.username}} on {{format_date date_created}}.
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+    

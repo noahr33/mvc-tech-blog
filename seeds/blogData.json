@@ -1,0 +1,14 @@
+[
+  {
+    "blog_title": "Test Title",
+    "content": "This is a test blog to seed my database."
+  },
+  {
+    "blog_title": "Tech Stuff",
+    "content": "I think tech stuff is cool."
+  },
+  {
+    "blog_title": "Javascript",
+    "content": "Javascript is a programming language."
+  }
+]

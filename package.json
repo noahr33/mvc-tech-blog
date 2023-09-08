@@ -2,10 +2,11 @@
   "name": "mvc-tech-blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx nodemon server.js"
+    "watch": "npx nodemon server.js",
+    "seed": "node seeds/seed.js"
   },
   "keywords": [],
   "author": "",
