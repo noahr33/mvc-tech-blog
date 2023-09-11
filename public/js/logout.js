@@ -8,7 +8,7 @@ logout.addEventListener("click", (event) => {
   })
     .then(response => {
       if (response.status === 204) {
-        window.location.assign("/")
+        window.location.replace("/")
       }
     })
     .catch(err => console.log(err))

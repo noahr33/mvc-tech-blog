@@ -31,7 +31,7 @@ router.get('/dashboard', async (req, res) => {
     console.log(usersBlogs)
     res.render('dashboard', { usersBlogs, loggedIn: req.session.logged_in })
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500)
   }
 })
 

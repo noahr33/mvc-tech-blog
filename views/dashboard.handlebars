@@ -1,9 +1,13 @@
 <div class="container">
-  <h1>Your Dashboard</h1>
-  <div class="card">
+  <h1 class="m-3">Your Dashboard</h1>
+  <div class="">
     {{#each usersBlogs}}
-    <h2>{{blog_title}}</h2>
-    <p>{{content}}</p>
+    <a href="/blog-post/{{id}}" class="text-decoration-none">
+      <div class="card border border-dark p-2 m-1">
+        <h2>{{blog_title}}</h2>
+        <p>{{content}}</p>
+      </div>
+    </a>
     {{/each}}
   </div>
 </div>
