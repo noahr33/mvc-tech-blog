@@ -9,11 +9,41 @@ router.get('/', async (req, res) => {
       include: [User],
       raw: true
     })
-    res.render('home', { blogs })
+    res.render('home', { blogs, loggedIn: req.session.logged_in })
   } catch (err) {
     res.status(500).json(err)
   }
 })
+
+router.get('/dashboard', async (req, res) => {
+  const userId = req.session.user_id
+  if (!userId) {
+    res.redirect('/login')
+  }
+  try {
+    const dashboardData = await Blog.findAll({
+      attributes: ['id', 'user_id', 'blog_title', 'content'],
+      where: {
+        user_id: req.session.user_id
+      }
+    })
+    const usersBlogs = dashboardData.map(blog => blog.get({ plain: true }))
+    console.log(usersBlogs)
+    res.render('dashboard', { usersBlogs, loggedIn: req.session.logged_in })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
+// login route
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login')
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 
 router.get('/blog-post/:id', async (req, res) => {
   try {
@@ -22,7 +52,7 @@ router.get('/blog-post/:id', async (req, res) => {
       raw: true,
     })
     console.log(blog)
-    res.render('blogpost', blog)
+    res.render('blogpost', { ...blog, loggedIn: req.session.logged_in })
   } catch (err) {
     res.status(500).json(err)
   }
