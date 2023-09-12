@@ -1,13 +1,28 @@
 <div class="container">
-  <h1 class="m-3">Your Dashboard</h1>
-  <div class="">
+  <h1 class="m-3 text-center">Your Dashboard</h1>
+  <h3>Your Blog Posts:</h3>
+  <div class="m-3">
     {{#each usersBlogs}}
     <a href="/blog-post/{{id}}" class="text-decoration-none">
-      <div class="card border border-dark p-2 m-1">
+      <div class="card border border-dark p-2 m-1 shadow-lg">
         <h2>{{blog_title}}</h2>
-        <p>{{content}}</p>
       </div>
     </a>
     {{/each}}
   </div>
+  <div class="border border-dark border-3 rounded-3 shadow-lg">
+    <div class="bg-primary p-3">
+      <h2 class="text-light">Create a New Post</h2>
+    </div>
+    <form class="p-3" action="">
+      <div class="mb-3">
+        <label for="blog-post-title" class="form-label">Blog Title</label>
+        <input type="text" class="form-control" id="blog-post-title" aria-describedby="blogtitle">
+        <label for="blog-content">Fill in the Blog Body</label>
+        <textarea name="blog-content" id="blogtextInput" class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary m-1 text-center">Submit</button>
+    </form>
+  </div>
+
 </div>
