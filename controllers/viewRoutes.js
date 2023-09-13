@@ -25,7 +25,7 @@ router.get('/dashboard', async (req, res) => {
       attributes: ['id', 'user_id', 'blog_title', 'content'],
       where: {
         user_id: req.session.user_id
-      }
+      },
     })
     const usersBlogs = dashboardData.map(blog => blog.get({ plain: true }))
     console.log(usersBlogs)
