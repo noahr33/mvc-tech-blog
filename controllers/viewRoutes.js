@@ -35,6 +35,18 @@ router.get('/dashboard', async (req, res) => {
   }
 })
 
+// dashboard post
+router.post('/dashboard', async (req, res) => {
+  const userId = req.session.user_id
+  try {
+    const newBlog = await Blog.create({ ...req.body, userId })
+    console.log(newBlog)
+    res.status(200).json(newBlog)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 // login route
 router.get('/login', async (req, res) => {
   try {
