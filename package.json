@@ -4,15 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "watch": "npx nodemon server.js",
-    "seed": "node seeds/seed.js",
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "seed": "node seeds/seed.js"
   },
   "keywords": [],
   "author": "",
